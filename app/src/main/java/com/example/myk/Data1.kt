@@ -9,20 +9,18 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
+import org.w3c.dom.Text
 
 class Data1 : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data1)
 
-        val secondActbutton = findViewById<Button>(R.id.button5)
-        secondActbutton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-        }
         val players = arrayOf("HR Admin","Engineering","QA QC","Production","IT","Marketing","Factory Support","Project","Welding","Accounting","Construction")
         val spinner = findViewById<Spinner>(R.id.spinner1)
         val arrayAdapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,players)
@@ -42,6 +40,16 @@ class Data1 : AppCompatActivity() {
             }
 
             }
+    val secondActbutton = findViewById<Button>(R.id.button5)
+    secondActbutton.setOnClickListener {
+        val intent = Intent(this, list::class.java)
+        startActivity(intent)
+    }
+        val secondActbutton2 = findViewById<Button>(R.id.button2)
+        secondActbutton2.setOnClickListener {
+            val intent = Intent(this, History::class.java)
+            startActivity(intent)
         }
     }
+}
 
