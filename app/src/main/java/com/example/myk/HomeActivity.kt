@@ -48,6 +48,9 @@ class HomeActivity : AppCompatActivity() {
             view, year, moth, day ->
             val  month = moth+1
             val intent = Intent(this,list::class.java)
+            intent.putExtra("Day",day)
+            intent.putExtra("Month",month)
+            intent.putExtra("Year",year)
                 startActivity(intent)
         }
         val secondActbutton = findViewById<Button>(R.id.button7)

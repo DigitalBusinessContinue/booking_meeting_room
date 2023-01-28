@@ -59,7 +59,19 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/datetextView"
+        android:id="@+id/datetextView1"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/click1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="วัน" />
+
+    <TextView
+        android:id="@+id/datetextView2"
         android:layout_width="80dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toTopOf="@+id/click1"
@@ -68,8 +80,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:ignore="UnknownId"
-        tools:text="@tools:sample/date/ddmmyy" />
+        tools:text="เดือน" />
+
+    <TextView
+        android:id="@+id/datetextView3"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/click1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972"
+        tools:text="ปี" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"

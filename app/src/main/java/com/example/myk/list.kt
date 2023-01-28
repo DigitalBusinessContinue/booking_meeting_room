@@ -1,17 +1,34 @@
 package com.example.myk
 
 import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CalendarView
 import android.widget.ImageView
+import android.widget.TextView
+import com.example.myk.databinding.ActivityListBinding
+import java.util.Calendar
 
 class list : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+    private lateinit var binding: ActivityListBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+        binding = ActivityListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val getResultIntent = intent.getIntExtra("Day",0)
+        binding.datetextView1.text = "$getResultIntent"
+
+        val getResultIntent1 = intent.getIntExtra("Month",0)
+        binding.datetextView2.text = "$getResultIntent1"
+
+        val getResultIntent2 = intent.getIntExtra("Year",0)
+        binding.datetextView3.text = "$getResultIntent2"
+
 
         val secondActImageView = findViewById<ImageView>(R.id.click1)
         secondActImageView.setOnClickListener {
@@ -43,5 +60,6 @@ class list : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
+
     }
 }
