@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuInflater
-import android.widget.Button
-import android.widget.TableLayout
+import android.view.View
+import android.widget.*
 import androidx.viewpager.widget.ViewPager
 
 import com.google.android.material.tabs.TabLayout
@@ -21,36 +21,36 @@ class Data2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data2)
 
-//        tabLayout = findViewById(R.id.tabLayout)
-//        viewPager = findViewById(R.id.viewPager)
-//
-//        tabLayout.addTab(tabLayout.newTab().setText("today"))
-//        tabLayout.addTab(tabLayout.newTab().setText("Tomorrow"))
-//        tabLayout.addTab(tabLayout.newTab().setText("After"))
-//        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-//
-//        val adapter = MyAdapter(this,supportFragmentManager,
-//        tabLayout.tabCount)
-//        viewPager.adapter = adapter
-//
-//        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-//        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
-//            override fun onTabSelected(tab: TabLayout.Tab?) {
-//                viewPager.currentItem = tab!!.position
-//            }
-//
-//            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-//
-//            override fun onTabReselected(tab: TabLayout.Tab?) {}
-//
-//        })
+        val players = arrayOf("HR Admin","Engineering","QA QC","Production","IT","Marketing","Factory Support","Project","Welding","Accounting","Construction")
+        val spinner = findViewById<Spinner>(R.id.spinner1)
+        val arrayAdapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,players)
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                p0: AdapterView<*>?,
+                p1: View?,
+                p2: Int,
+                p3: Long
+            ) {
+                Toast.makeText(applicationContext,"selected player is = "+players[p2], Toast.LENGTH_SHORT).show()
+            }
 
-//        val secondActbutton = findViewById<Button>(R.id.button6)
-//        secondActbutton.setOnClickListener {
-//            val intent = Intent(this, HomeActivity::class.java)
-//            startActivity(intent)
-//        }
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
 
+        }
+
+        val secondActbutton = findViewById<Button>(R.id.button5)
+        secondActbutton.setOnClickListener {
+            val intent = Intent(this, list::class.java)
+            startActivity(intent)
+        }
+        val secondActbutton2 = findViewById<Button>(R.id.button2)
+        secondActbutton2.setOnClickListener {
+            val intent = Intent(this, History::class.java)
+            startActivity(intent)
+        }
 
     }
 }

@@ -13,12 +13,38 @@ import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import com.example.myk.databinding.ActivityMainBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import org.w3c.dom.Text
 
 class Data1 : AppCompatActivity() {
 
+//    private lateinit var binding : ActivityMainBinding
+//    private lateinit var database : DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+  //      setContentView(binding.root)
+//
+//        val nameemployee = binding.editTextTextMultiLine.text.toString()
+//        val codeId = binding.editTextTextPersonName2.text.toString()
+//
+//        database = FirebaseDatabase.getInstance().getReference("User")
+//        val User = User(nameemployee,codeId)
+//        database.child(nameemployee).setValue(User).addOnSuccessListener {
+//
+//            binding.editTextTextMultiLine.text.clear()
+//            binding.editTextTextPersonName2.text.clear()
+//
+//            Toast.makeText(this,"Successfully Saved",Toast.LENGTH_SHORT).show()
+//        }.addOnFailureListener{
+//
+//            Toast.makeText(this,"Files",Toast.LENGTH_SHORT).show()
+//        }
+
+
         setContentView(R.layout.activity_data1)
 
         val players = arrayOf("HR Admin","Engineering","QA QC","Production","IT","Marketing","Factory Support","Project","Welding","Accounting","Construction")
