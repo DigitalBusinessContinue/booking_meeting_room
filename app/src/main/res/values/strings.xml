@@ -5,6 +5,13 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="title_activity_l">l</string>
     <string name="naaa">naaa</string>
+    <string name="radioButton">08:00-12:00น.</string>
+    <string name="radioButton2">13:00-18:00น.</string>
+    <string name="radioButton3">08:00-18:00น.</string>
+    <string name="checkBox1">คอมพิวเตอร์</string>
+    <string name="checkBox2">เลเซอร์พอยเตอร์</string>
+    <string name="checkBox3">ไมโครโฟน</string>
+
     <string-array name="activities">
         <item>HRAdmin</item>
         <item>QAQC</item>
