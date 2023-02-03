@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -26,7 +27,7 @@ class Data1 : AppCompatActivity() {
     private lateinit var button: Button
         private var roomtv: TextView? = null
 
-    @SuppressLint("MissingInflatedId", "CutPasteId")
+    @SuppressLint("MissingInflatedId", "CutPasteId", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityData1Binding.inflate(layoutInflater)
@@ -110,28 +111,50 @@ class Data1 : AppCompatActivity() {
 
 
             val room = binding.roomtextView.text.toString()
-            val gt = radioButton.text.toString()
-            val ddd = binding.dddtv.text.toString()
-            val mmm = binding.mmmtv.text.toString()
-            val yyy = binding.yyytv.text.toString()
-            val head = binding.editTextTextMultiLine.text.toString()
-            val person = binding.editTextTextPersonName2.text.toString()
-            val dpm = spinner.selectedItem.toString()
-            val gi = result.toString()
-            database = FirebaseDatabase.getInstance().getReference("Booking")
-            val Save = Save(room,gt,ddd,mmm,yyy,head,person,dpm,gi)
+            val gt = radioButton.text.toString().trim()
+            val ddd = binding.dddtv.text.toString().trim()
+            val mmm = binding.mmmtv.text.toString().trim()
+            val yyy = binding.yyytv.text.toString().trim()
+            val head = binding.editTextTextMultiLine.text.toString().trim()
+            val person = binding.editTextTextPersonName2.text.toString().trim()
+            val dpm = spinner.selectedItem.toString().trim()
+            val gi = result.toString().trim()
 
-            database.child(room).setValue(Save).addOnSuccessListener {
-
-                binding.editTextTextMultiLine.text.clear()
-                binding.editTextTextPersonName2.text.clear()
-
-
-
-
-                Toast.makeText(this,"Saved",Toast.LENGTH_SHORT).show()
-
+            if (TextUtils.isEmpty(head)){
+                binding.editTextTextMultiLine.error = "กรุณากรอกข้อมูล"
             }
+            if (TextUtils.isEmpty(person)){
+                binding.editTextTextPersonName2.error = "กรุณากรอกข้อมูล"
+            }
+            else{
+                var database = FirebaseDatabase.getInstance()
+                var databaseReference = database.reference.child("Booking")
+                var id = databaseReference.push()
+
+                id.child("id").setValue(id.key.toString())
+                id.child("aroom").setValue(room)
+                id.child("btime").setValue(gt)
+                id.child("cday").setValue(ddd)
+                id.child("dmonth").setValue(mmm)
+                id.child("eyeas").setValue(yyy)
+                id.child("fhead").setValue(head)
+                id.child("gperson").setValue(person)
+                id.child("hdepertment").setValue(dpm)
+                id.child("iitem").setValue(gi)
+           // }
+            //database = FirebaseDatabase.getInstance().getReference("Booking")
+            //val Save = Save(room,gt,ddd,mmm,yyy,head,person,dpm,gi)
+
+          // database.child(room).setValue(Save).addOnSuccessListener {
+
+//                binding.editTextTextMultiLine.text.clear()
+//                binding.editTextTextPersonName2.text.clear()
+                Toast.makeText(applicationContext,"Save",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"Saved",Toast.LENGTH_SHORT).show()
+               val intent = Intent(this, History::class.java)
+                startActivity(intent)
+
+          }
         }
 
 
@@ -148,6 +171,7 @@ class Data1 : AppCompatActivity() {
                 p3: Long
             ) {
                 Toast.makeText(applicationContext,"selected player is = "+players[p2],Toast.LENGTH_SHORT).show()
+
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
