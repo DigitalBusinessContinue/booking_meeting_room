@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".list">
+    tools:context=".ListActivity">
 
     <ImageView
         android:id="@+id/click1"
@@ -57,39 +57,10 @@
         tools:layout_editor_absoluteX="0dp"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/datetextView1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:textAlignment="textEnd"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/click1"
-        app:layout_constraintEnd_toStartOf="@+id/datetextView2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
-        tools:text="วัน" />
 
     <TextView
-        android:id="@+id/datetextView2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/click1"
-        app:layout_constraintEnd_toStartOf="@+id/datetextView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
-        tools:text="เดือน" />
-
-    <TextView
-        android:id="@+id/datetextView3"
-        android:layout_width="40dp"
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -99,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.971"
-        tools:text="ปี" />
+        tools:text="วัน/เดือน/ปี" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -143,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="08:00น.-12:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click1"
@@ -156,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="13:00น.-18:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click1"
@@ -169,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="08:00น.-12:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click2"
@@ -182,7 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="13:00น.-18:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click2"
@@ -195,7 +166,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="08:00น.-12:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click3"
@@ -208,7 +179,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="13:00น.-18:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click3"
@@ -221,7 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="08:00น.-12:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click4"
@@ -234,7 +205,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="13:00น.-18:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click4"
@@ -247,7 +218,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="08:00น.-12:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click5"
@@ -260,7 +231,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="#E0F2F1"
+        android:background="#87E7FF"
         android:text="13:00น.-18:00น."
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/click5"
@@ -269,15 +240,74 @@
         app:layout_constraintVertical_bias="0.827" />
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#FEFEFE"
+        android:text="ห้องประชุม 1"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/click1"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="@+id/click1"
+        app:layout_constraintTop_toTopOf="@+id/click1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#FEFEFE"
+        android:text="ห้องประชุม 2"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/click2"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="@+id/click2"
+        app:layout_constraintTop_toTopOf="@+id/click2" />
+
+    <TextView
         android:id="@+id/textView3"
-        android:layout_width="38dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="65dp"
-        android:text=".   ."
-        android:textSize="21sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#FEFEFE"
+        android:text="ห้องประชุม 3"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/click3"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="@+id/click3"
+        app:layout_constraintTop_toTopOf="@+id/click3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#FEFEFE"
+        android:text="ห้องประชุม 4"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/click4"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="@+id/click4"
+        app:layout_constraintTop_toTopOf="@+id/click4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#FEFEFE"
+        android:text="ห้องประชุม 5"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/click5"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="@+id/click5"
+        app:layout_constraintTop_toTopOf="@+id/click5" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

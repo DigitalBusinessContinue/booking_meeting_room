@@ -1,16 +1,11 @@
 package com.example.myk
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
-import android.widget.ImageButton
-import android.widget.Toast
 import com.example.myk.databinding.ActivityHomeBinding
-import com.example.myk.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import java.util.Calendar
 
@@ -47,15 +42,14 @@ class HomeActivity : AppCompatActivity() {
         picker.init(today.get(Calendar.YEAR),today.get(Calendar.MONTH),today.get(Calendar.DAY_OF_MONTH)){
             view, year, moth, day ->
             val  month = moth+1
-            val intent = Intent(this,list::class.java)
-            intent.putExtra("Day",day)
-            intent.putExtra("Month",month)
-            intent.putExtra("Year",year)
+            val date = "$day/$month/$year"
+            val intent = Intent(this,ListActivity::class.java)
+            intent.putExtra("KEY_DATE",date)
                 startActivity(intent)
         }
         val secondActbutton = findViewById<Button>(R.id.button7)
         secondActbutton.setOnClickListener {
-            val intent = Intent(this, History::class.java)
+            val intent = Intent(this, HistoryActivity::class.java)
             startActivity(intent)
         }
     }

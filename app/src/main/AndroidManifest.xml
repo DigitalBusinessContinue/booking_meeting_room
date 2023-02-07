@@ -22,14 +22,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".History"
+            android:name=".HistoryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".list"
+            android:name=".ListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -67,7 +67,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Data1"
+            android:name=".BookingActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

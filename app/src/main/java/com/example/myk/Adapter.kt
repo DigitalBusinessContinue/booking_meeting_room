@@ -11,9 +11,7 @@ class Adapter(val usersList:ArrayList<Save>) : RecyclerView.Adapter<Adapter.MyVi
     class  MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val tvRoom:TextView = itemView.findViewById(R.id.tv1)
         val tvTime:TextView = itemView.findViewById(R.id.tv2)
-        val tvDate:TextView = itemView.findViewById(R.id.tv3)
-        val tvMonth:TextView = itemView.findViewById(R.id.tv4)
-        val tvYear:TextView = itemView.findViewById(R.id.tv5)
+        val dateTextView:TextView = itemView.findViewById(R.id.dateTextView)
         val tvHade:TextView = itemView.findViewById(R.id.tv6)
         val tvPerson:TextView = itemView.findViewById(R.id.tv7)
         val tvDepertment:TextView = itemView.findViewById(R.id.tv8)
@@ -26,14 +24,12 @@ class Adapter(val usersList:ArrayList<Save>) : RecyclerView.Adapter<Adapter.MyVi
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.tvRoom.text = usersList[position].aroom
-        holder.tvTime.text = usersList[position].btime
-        holder.tvDate.text = usersList[position].cday
-        holder.tvMonth.text = usersList[position].dmonth
-        holder.tvYear.text = usersList[position].eyeas
+        holder.dateTextView.text = usersList[position].date
         holder.tvHade.text = usersList[position].fhead
         holder.tvPerson.text = usersList[position].gperson
         holder.tvDepertment.text = usersList[position].hdepertment
         holder.tvItem.text = usersList[position].iitem
+        holder.tvTime.text = usersList[position].itime
 
     }
 

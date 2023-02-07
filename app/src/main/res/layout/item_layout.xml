@@ -108,51 +108,14 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tv3"
+                android:id="@+id/dateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="1"
+                android:text="วัน/เดือน/ปี"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 tools:ignore="DuplicateIds" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                 />
-
-            <TextView
-                android:id="@+id/tv4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="2"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/tv3"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/tv4"
-                />
-
-            <TextView
-                android:id="@+id/tv5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="2023"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
 
         </LinearLayout>
 
